@@ -1,4 +1,5 @@
 import React from 'react';
+import IframePic from './IframePic.jsx';
 import {
     Button,
     ButtonGroup,
@@ -27,7 +28,20 @@ const Album = ({ prints }) => {
                                         alt={item.altText}
                                     />
                                     <CardBody>
-                                        <CardText>{item.displayLink}</CardText>
+                                        <CardText>
+                                            {item.displayLink}
+                                            <br />
+                                            {item.link}
+                                        </CardText>
+                                        <IframePic
+                                            name={item.displayLink}
+                                            link={item.link}
+                                        />
+
+                                        {/* <iframe
+                                            src="https://y7g7g.csb.app/"
+                                            title="W3Schools Free Online Web Tutorials"
+                                        /> */}
                                         <div className="d-flex justify-content-between align-items-center">
                                             <ButtonGroup>
                                                 <Button

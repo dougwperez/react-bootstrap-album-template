@@ -44,7 +44,7 @@ export default class Example extends React.Component {
         // res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
         axios
             .get(
-                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=sticky header&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=stop watch&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
             )
             //  res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
             .then(response => {
