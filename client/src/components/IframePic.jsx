@@ -18,7 +18,7 @@ export default class IframePic extends React.Component {
             let split = this.props.link.split('/s/');
             let identifier = split[1];
             let codeSandboxFrame = `https://codesandbox.io/embed/${identifier}?fontsize=14&hidenavigation=1&theme=dark&view=preview`;
-            console.log('identifier', identifier);
+
             return <iframe src={codeSandboxFrame} />;
         }
         if (this.props.name === 'jsfiddle.net') {
@@ -26,11 +26,14 @@ export default class IframePic extends React.Component {
             // let identifier = split[1];
             // let codeSandboxFrame = `https://codesandbox.io/embed/${identifier}?fontsize=14&hidenavigation=1&theme=dark&view=preview`;
             // console.log('identifier', identifier);
+            let removeHttp = this.props.link.substring(6);
+            let jsFiddleFrame = removeHttp.concat('embedded/result/');
+            console.log('jsFiddleFrame', jsFiddleFrame);
             return (
                 <iframe
                     width="100%"
                     height="300"
-                    src="//jsfiddle.net/Daniel_Hug/pvk6p/embedded/result/"
+                    src={jsFiddleFrame}
                     allowfullscreen="allowfullscreen"
                     allowpaymentrequest
                     frameborder="0"
