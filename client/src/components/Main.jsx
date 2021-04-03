@@ -2,7 +2,7 @@ import React from 'react';
 import Album from './Album';
 import { Button, Container, Jumbotron } from 'reactstrap';
 
-const Main = ({ album }) => {
+const Main = ({ album, prints }) => {
     return (
         <main role="main">
             <Jumbotron className="text-center">
@@ -24,7 +24,7 @@ const Main = ({ album }) => {
                     </p>
                 </Container>
             </Jumbotron>
-            <Album album={album} />
+            <Album album={album} prints={prints} />
         </main>
     );
 };

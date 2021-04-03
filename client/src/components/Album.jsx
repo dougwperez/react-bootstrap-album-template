@@ -11,12 +11,12 @@ import {
     Row
 } from 'reactstrap';
 
-const Album = ({ album }) => {
+const Album = ({ prints }) => {
     return (
         <div className="album py-5 bg-light">
             <Container>
                 <Row>
-                    {album.map((item, key) => {
+                    {prints.map((item, key) => {
                         return (
                             <Col md="4" key={key}>
                                 <Card className="mb-4 box-shadow">
@@ -27,7 +27,7 @@ const Album = ({ album }) => {
                                         alt={item.altText}
                                     />
                                     <CardBody>
-                                        <CardText>{item.description}</CardText>
+                                        <CardText>{item.displayLink}</CardText>
                                         <div className="d-flex justify-content-between align-items-center">
                                             <ButtonGroup>
                                                 <Button
