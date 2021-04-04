@@ -1,8 +1,9 @@
 import React from 'react';
 import Album from './Album';
 import { Button, Container, Jumbotron } from 'reactstrap';
+import SearchBar from './SearchBar.jsx';
 
-const Main = ({ album, prints }) => {
+const Main = ({ album, prints, getPrints }) => {
     return (
         <main role="main">
             <Jumbotron className="text-center">
@@ -14,6 +15,7 @@ const Main = ({ album, prints }) => {
                         sweet, but not too short so folks don't simply skip over
                         it entirely.
                     </p>
+                    <SearchBar getPrints={getPrints} />
                     <p>
                         <Button color="primary" className="mx-1 my-2">
                             Main call to action

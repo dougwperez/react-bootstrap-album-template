@@ -10,7 +10,7 @@ import axios from 'axios';
 export default class Example extends React.Component {
     constructor(props) {
         super(props);
-
+        this.getPrints = this.getPrints.bind(this);
         this.toggleNavbar = this.toggleNavbar.bind(this);
         this.state = {
             collapsed: true,
@@ -39,12 +39,13 @@ export default class Example extends React.Component {
         this.callAPI();
     }
 
-    getFiddles() {
+    getPrints(query) {
+        console.log('testing query', query);
         const proxyurl = 'https://cors-anywhere.herokuapp.com/';
         // res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
         axios
             .get(
-                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=note pad&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
             )
             //  res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
             .then(response => {
@@ -103,7 +104,7 @@ export default class Example extends React.Component {
     }
 
     componentDidMount() {
-        this.getFiddles();
+        this.getPrints();
         this.challengesByUser();
     }
 
@@ -115,7 +116,11 @@ export default class Example extends React.Component {
                     toggleNavbar={this.toggleNavbar}
                     socialLinks={this.state.socialLinks}
                 />
-                <Main album={this.state.album} prints={this.state.prints} />
+                <Main
+                    album={this.state.album}
+                    prints={this.state.prints}
+                    getPrints={this.getPrints}
+                />
                 <Footer />
             </div>
         );
