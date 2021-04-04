@@ -12,6 +12,14 @@
         0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     transition: 0.5s ease;
+    position: relative;
+    top: 25px;
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+    background: brown;
+    text-align: center;
+    background: #c19a6b;
 }
 @media (min-width: 768px) {
     .jumbotron {
@@ -20,12 +28,20 @@
     }
 }
 
+.jumbotron {
+    transform-style: preserve-3d;
+}
+.jumbotron {
+    transform: rotate3d(1, 0, 0, 50deg);
+}
+
 .jumbotron p:last-child {
     margin-bottom: 0;
 }
 
 .jumbotron-heading {
-    font-weight: 300;
+    font-weight: 800;
+    color: #021b79;
 }
 
 .jumbotron .container {
@@ -56,10 +72,53 @@ footer p {
         0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     transition: 0.5s ease;
+    box-shadow: inset 0 0 500px rgba(37, 106, 133, 0.75);
+    filter: blur(1px);
+    z-index: -2;
+    background-color: rgba(72, 90, 149, 0.2);
+    backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
+        brightness(140%);
 
     /* &:hover {
       box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.157),
         0 1.7px 2.6px rgba(0, 0, 0, 0.224), 0 3.5px 5.3px rgba(0, 0, 0, 0.28),
         0 7.3px 11px rgba(0, 0, 0, 0.346), 0 20px 30px rgba(0, 0, 0, 0.5);
     } */
+}
+
+.searchBar {
+    width: 500px;
+    height: 100px;
+    font-size: 27px;
+    position: relative;
+    display: flex;
+    color: #021b79;
+    font-weight: 500;
+}
+
+.searchBtn {
+    height: 100px;
+    font-size: 27px;
+
+    color: white;
+    font-weight: 700;
+    background: #0575e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to top,
+        #021b79,
+        #0575e6
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to top,
+        #021b79,
+        #0575e6
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* position: relative;
+    display: flex; */
+}
+
+p {
+    color: black;
 }

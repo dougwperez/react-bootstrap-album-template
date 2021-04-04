@@ -8,21 +8,24 @@ const Main = ({ album, prints, getPrints }) => {
         <main role="main">
             <Jumbotron className="text-center">
                 <Container>
-                    <h1 className="jumbotron-heading">Album example</h1>
+                    <h1 className="jumbotron-heading">BluePrints JS</h1>
                     <p className="lead text-muted">
-                        Something short and leading about the collection
-                        below—its contents, the creator, etc. Make it short and
-                        sweet, but not too short so folks don't simply skip over
-                        it entirely.
+                        The search engine that combs the web for live working
+                        code.
                     </p>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <SearchBar getPrints={getPrints} />
                     <p>
-                        <Button color="primary" className="mx-1 my-2">
+                        {/* <Button color="primary" className="mx-1 my-2">
                             Main call to action
                         </Button>
                         <Button color="secondary" className="my-2">
                             Secondary action
-                        </Button>
+                        </Button> */}
                     </p>
                 </Container>
             </Jumbotron>

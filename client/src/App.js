@@ -17,7 +17,8 @@ export default class Example extends React.Component {
             socialLinks: socialLinks,
             album: albumItems,
             apiResponse: '',
-            prints: []
+            prints: [],
+            start: 0
         };
     }
 
@@ -45,7 +46,7 @@ export default class Example extends React.Component {
         // res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
         axios
             .get(
-                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=1&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
             )
             //  res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
             .then(response => {
@@ -104,25 +105,29 @@ export default class Example extends React.Component {
     }
 
     componentDidMount() {
-        this.getPrints();
-        this.challengesByUser();
+        // this.getPrints();
+        // this.challengesByUser();
     }
 
     render() {
         return (
             <div>
-                <Header
+                {/* <Header
                     collapsed={this.state.collapsed}
                     toggleNavbar={this.toggleNavbar}
                     socialLinks={this.state.socialLinks}
-                />
+                /> */}
                 <Main
                     album={this.state.album}
                     prints={this.state.prints}
                     getPrints={this.getPrints}
                 />
                 <Footer />
+                <button onClick={() => this.setState({ start: 7 })}>
+                    NEXT
+                </button>
             </div>
+            // this.setState({count: this.state.count+1})
         );
     }
 }
