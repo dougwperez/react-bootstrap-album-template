@@ -12,13 +12,15 @@ export default class Example extends React.Component {
         super(props);
         this.getPrints = this.getPrints.bind(this);
         this.toggleNavbar = this.toggleNavbar.bind(this);
+        this.nextPrints = this.nextPrints.bind(this);
         this.state = {
             collapsed: true,
             socialLinks: socialLinks,
             album: albumItems,
             apiResponse: '',
             prints: [],
-            start: 0
+            start: 0,
+            queryState: ''
         };
     }
 
@@ -42,11 +44,16 @@ export default class Example extends React.Component {
 
     getPrints(query) {
         console.log('testing query', query);
+        this.setState({ queryState: query });
         const proxyurl = 'https://cors-anywhere.herokuapp.com/';
         // res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
         axios
             .get(
-                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=1&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${
+                    this.state.queryState
+                }&start=${
+                    this.state.start
+                }&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
             )
             //  res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
             .then(response => {
@@ -109,6 +116,11 @@ export default class Example extends React.Component {
         // this.challengesByUser();
     }
 
+    nextPrints() {
+        this.setState({ start: 7 });
+        this.getPrints();
+    }
+
     render() {
         return (
             <div>
@@ -123,9 +135,7 @@ export default class Example extends React.Component {
                     getPrints={this.getPrints}
                 />
                 <Footer />
-                <button onClick={() => this.setState({ start: 7 })}>
-                    NEXT
-                </button>
+                <button onClick={() => this.nextPrints()}>NEXT</button>
             </div>
             // this.setState({count: this.state.count+1})
         );
