@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="searchPanel" onSubmit={this.handleSubmit}>
                 <label>
                     <input
                         className="searchBar"

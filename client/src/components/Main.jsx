@@ -9,15 +9,13 @@ const Main = ({ album, prints, getPrints }) => {
             <Jumbotron className="text-center">
                 <Container>
                     <h1 className="jumbotron-heading">BluePrints JS</h1>
-                    <p className="lead text-muted">
-                        The search engine that combs the web for live working
-                        code.
+                    <p className="lead text-muted" className="subtitle">
+                        <strong>
+                            The search engine that combs the web for live
+                            working code.
+                        </strong>
                     </p>
 
-                    <br />
-                    <br />
-                    <br />
-                    <br />
                     <SearchBar getPrints={getPrints} />
                     <p>
                         {/* <Button color="primary" className="mx-1 my-2">

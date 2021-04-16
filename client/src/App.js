@@ -4,7 +4,8 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import albumItems from './data/album';
 import socialLinks from './data/socialLinks';
-import './App.css';
+
+import './App.scss';
 import axios from 'axios';
 
 export default class Example extends React.Component {
@@ -49,9 +50,7 @@ export default class Example extends React.Component {
         // res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
         axios
             .get(
-                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${
-                    this.state.queryState
-                }&start=${
+                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${
                     this.state.start
                 }&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
             )
@@ -129,6 +128,7 @@ export default class Example extends React.Component {
                     toggleNavbar={this.toggleNavbar}
                     socialLinks={this.state.socialLinks}
                 /> */}
+                <button onClick={() => this.nextPrints()}>NEXT</button>
                 <Main
                     album={this.state.album}
                     prints={this.state.prints}
