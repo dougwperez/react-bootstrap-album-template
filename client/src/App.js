@@ -46,18 +46,21 @@ export default class Example extends React.Component {
     getPrints(query) {
         console.log('testing query', query);
         this.setState({ queryState: query });
+        let start = 0;
         const proxyurl = 'https://cors-anywhere.herokuapp.com/';
         // res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
         axios
             .get(
-                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${
-                    this.state.start
-                }&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${start}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
             )
             //  res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
             .then(response => {
-                console.log('authored response.data', response.data.items);
-                this.setState({ prints: response.data.items });
+                if (start < 10) {
+                    console.log('authored response.data', response.data.items);
+                    this.setState({ prints: response.data.items });
+                    start += 7;
+                    // this.getPrints(query);
+                }
             })
             .catch(error => console.log(error));
     }

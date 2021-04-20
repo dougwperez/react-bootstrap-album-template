@@ -6,7 +6,7 @@ import SearchBar from './SearchBar.jsx';
 const Main = ({ album, prints, getPrints }) => {
     return (
         <main role="main">
-            <Jumbotron className="text-center">
+            <Jumbotron className="text-center" className="frosted-glass">
                 <Container>
                     <h1 className="jumbotron-heading">BluePrints JS</h1>
                     <p className="lead text-muted" className="subtitle">
