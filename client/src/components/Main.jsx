@@ -19,7 +19,7 @@ const Main = ({ album, prints, getPrints }) => {
                     <SearchBar getPrints={getPrints} />
                     <p>
                         {/* <Button color="primary" className="mx-1 my-2">
-                            Main call to action
+                            Main call to action Get RId of this
                         </Button>
                         <Button color="secondary" className="my-2">
                             Secondary action
