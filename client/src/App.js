@@ -50,18 +50,36 @@ export default class Example extends React.Component {
         const proxyurl = 'https://cors-anywhere.herokuapp.com/';
         // res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
         axios
-            .get(
-                `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${start}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
-            )
+            .all([
+                axios.get(
+                    `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${start}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                ),
+                axios.get(
+                    `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${7}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                )
+            ])
             //  res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
-            .then(response => {
-                if (start < 10) {
-                    console.log('authored response.data', response.data.items);
-                    this.setState({ prints: response.data.items });
-                    start += 7;
+            // .then(response => {
+            .then(
+                axios.spread((response1, response2) => {
+                    console.log(
+                        'authored response.data1',
+                        response1.data.items
+                    );
+                    console.log(
+                        'authored response.data2',
+                        response2.data.items
+                    );
+                    this.setState({
+                        prints: response1.data.items.concat(
+                            response2.data.items
+                        )
+                    });
+                    // this.setState({ prints: response2.data.items });
+
                     // this.getPrints(query);
-                }
-            })
+                })
+            )
             .catch(error => console.log(error));
     }
 
