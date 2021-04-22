@@ -20,6 +20,9 @@ export default class Example extends React.Component {
             album: albumItems,
             apiResponse: '',
             prints: [],
+            prints1: [],
+            prints2: [],
+            prints3: [],
             start: 0,
             queryState: ''
         };
@@ -56,24 +59,24 @@ export default class Example extends React.Component {
                 ),
                 axios.get(
                     `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${7}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                ),
+                axios.get(
+                    `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${14}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
                 )
             ])
             //  res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
             // .then(response => {
             .then(
-                axios.spread((response1, response2) => {
-                    console.log(
-                        'authored response.data1',
-                        response1.data.items
-                    );
-                    console.log(
-                        'authored response.data2',
-                        response2.data.items
-                    );
+                axios.spread((response1, response2, response3) => {
+                    // this.setState({
+                    //     prints: response1.data.items.concat(
+                    //         response2.data.items
+                    //     )
+                    // });
                     this.setState({
-                        prints: response1.data.items.concat(
-                            response2.data.items
-                        )
+                        prints1: response1.data.items,
+                        prints2: response2.data.items,
+                        prints3: response3.data.items
                     });
                     // this.setState({ prints: response2.data.items });
 
@@ -153,6 +156,9 @@ export default class Example extends React.Component {
                 <Main
                     album={this.state.album}
                     prints={this.state.prints}
+                    prints1={this.state.prints1}
+                    prints2={this.state.prints2}
+                    prints3={this.state.prints3}
                     getPrints={this.getPrints}
                 />
                 <Footer />

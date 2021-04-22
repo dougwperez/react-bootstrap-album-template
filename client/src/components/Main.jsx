@@ -3,7 +3,7 @@ import Album from './Album';
 import { Button, Container, Jumbotron } from 'reactstrap';
 import SearchBar from './SearchBar.jsx';
 
-const Main = ({ album, prints, getPrints }) => {
+const Main = ({ album, prints, getPrints, prints1, prints2, prints3 }) => {
     return (
         <main role="main">
             <Jumbotron className="text-center" className="frosted-glass">
@@ -27,7 +27,13 @@ const Main = ({ album, prints, getPrints }) => {
                     </p>
                 </Container>
             </Jumbotron>
-            <Album album={album} prints={prints} />
+            <Album
+                album={album}
+                prints={prints}
+                prints1={prints1}
+                prints2={prints2}
+                prints3={prints3}
+            />
         </main>
     );
 };
