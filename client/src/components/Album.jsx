@@ -15,38 +15,28 @@ import {
 
 const Album = ({ prints, prints1, prints2, prints3 }) => {
     console.log('PRINTS.lenth', prints.length);
-    const DivGroup = [
-        { tag: 'tab0' },
-        { tag: 'tab1' },
-        { tag: 'tab2' },
-        { tag: 'tab3' },
-        { tag: 'tab4' }
-    ];
+    const DivGroup = [{ tag: 'tab0' }, { tag: 'tab1' }];
     return (
         <div className="album py-5 bg-light">
-            <div id="tab0" />
-            <div id="tab1" />
-            <div id="tab2" />
-            <div id="tab3" />
             {/* for (var i = 0; i < prints.length; i++){
                 console.log(prints[i])
             } */}
 
-            {DivGroup.map((item, key) => {
+            {/* {DivGroup.map((item, key) => {
                 if (prints.length < 7) {
                     console.log('mpaed prints', prints);
                 }
                 return <div id={item.tag} />;
-            })}
+            })} */}
             {/* PAGE 3 */}
-            <div id="tab2">
+            <div id="tab3">
                 <a href="#" class="arrow left" />
                 <Container>
                     <Row className="Row-class">
                         {prints3.map((item, key) => {
                             console.log('KEY', key);
                             if (key < 6) {
-                                var idTag = 'tab4';
+                                var idTag = 'tab3';
                                 return (
                                     <Col md="4" key={key}>
                                         {/* <Paper elevation={3} /> */}
@@ -112,14 +102,14 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
             </div>
             {/* PAGE 2 */}
             {/* <div id="tab4"> */}
-            <div id="tab3">
+            <div id="tab2">
                 <a href="#" class="arrow left" />
-                <Container>
+                <Container class="iframe-holder">
                     <Row className="Row-class">
                         {prints2.map((item, key) => {
                             console.log('KEY', key);
                             if (key < 6) {
-                                var idTag = 'tab4';
+                                var idTag = 'tab2';
                                 return (
                                     <Col md="4" key={key}>
                                         {/* <Paper elevation={3} /> */}
@@ -184,14 +174,14 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
                 <a href="#" class="arrow right" />
             </div>
             {/* PAGE 1 */}
-            <div id="tab4">
+            <div id="tab1">
                 <a href="#" class="arrow left" />
                 <Container>
                     <Row className="Row-class">
                         {prints1.map((item, key) => {
                             console.log('KEY', key);
                             if (key < 6) {
-                                var idTag = 'tab4';
+                                var idTag = 'tab1';
                                 return (
                                     <Col md="4" key={key}>
                                         {/* <Paper elevation={3} /> */}

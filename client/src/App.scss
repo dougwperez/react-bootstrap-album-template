@@ -14,13 +14,21 @@
     transition: 0.5s ease;
     position: relative;
     top: -75px;
-    height: 300px;
+    height: 200px;
     width: 800px;
     margin: 0 auto;
     background: brown;
     text-align: center;
     background: #c19a6b;
 }
+
+// .jumbotronGlass {
+//     background-color: blue;
+//     box-shadow: 0 0.3px 0.7px rgba(255, 0, 0, 0.126),
+//         0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224),
+//         0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+//     backdrop-filter: blur(20px);
+// }
 @media (min-width: 768px) {
     .jumbotron {
         padding-top: calc(var(--jumbotron-padding-y) * 2);
@@ -31,6 +39,7 @@
 .jumbotron {
     transform-style: preserve-3d;
     transform: rotate3d(1, 0, 0, 50deg);
+    margin-top: 15px;
 }
 .jumbotron {
 }
@@ -42,7 +51,7 @@
 .jumbotron-heading {
     font-weight: 800;
     color: #021b79;
-    margin-top: -25px;
+    margin-top: -50px;
     margin-bottom: 30px;
 }
 
@@ -104,6 +113,7 @@ footer p {
     transform-style: preserve-3d;
     transform: rotate3d(1, 0, 0, 50deg);
     height: 150px;
+    margin-top: -28px;
 }
 
 .searchBar {
@@ -148,6 +158,7 @@ p {
     color: black;
     font-weight: 300;
     font-size: 19px;
+    margin-top: -17px;
 }
 
 // tabs
@@ -155,12 +166,12 @@ p {
     &::after {
         content: '';
         position: absolute;
-        width: 5vw;
+        width: 4vw;
         height: 25vh;
         background: $col;
         border-radius: 0 20px 20px 0;
         top: $tabPos;
-        right: -4vw;
+        right: -2.5vw;
     }
 }
 
@@ -177,10 +188,12 @@ body {
 
 .tab {
     height: 100%;
-    margin-top: -180px;
-    margin-left: 15px;
+    margin-top: -170px;
+    margin-left: 10px;
+    margin-right: -50px;
     border-radius: 20px;
 
+    transform: translateX(1vw);
     position: absolute;
     box-shadow: 6px 0px 6px rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease;
@@ -189,34 +202,34 @@ body {
     }
 }
 
-#tab0 {
-    @extend .tab;
-    width: 93.5vw;
-    background: black;
-}
+// #tab0 {
+//     @extend .tab;
+//     width: 93.5vw;
+//     background: black;
+// }
 
-#tab1 {
-    @extend .tab;
-    width: 93.5vw;
-    background: $col4;
-    @include tab($col4, 75%);
-}
+// #tab1 {
+//     @extend .tab;
+//     width: 93.5vw;
+//     background: $col4;
+//     @include tab($col4, 75%);
+// }
 
-#tab2 {
+#tab3 {
     @extend .tab;
     width: 93.5vw;
     background: $col3;
     @include tab($col3, 50%);
 }
 
-#tab3 {
+#tab2 {
     @extend .tab;
     width: 93.5vw;
     background: $col2;
     @include tab($col2, 25%);
 }
 
-#tab4 {
+#tab1 {
     @extend .tab;
     width: 93.5vw;
     background: $col1;
@@ -295,5 +308,101 @@ html {
         transform: translate(-40%, -60%) rotate(45deg);
         width: 200%;
         height: 200%;
+    }
+
+    // #help-btn,
+    // #github-btn {
+    //     display: inline-block;
+    //     /* additional code */
+    // }
+}
+
+.buttons {
+    width: 20px;
+    // margin: 0 auto;
+
+    display: inline;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+}
+
+.action_btn {
+    display: inline;
+    font-size: 30px;
+
+    // color: #021b79;
+}
+
+.test {
+    width: 250px !important;
+    height: 30px;
+}
+
+.topcorner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
+.card-body {
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.card-text {
+    color: white;
+    font-weight: 600;
+}
+
+.svg_icons1 {
+    transform: scale(2.6);
+}
+.svg_icons2 {
+    transform: scale(2);
+}
+
+.fab:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
     }
 }
