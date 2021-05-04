@@ -8,6 +8,9 @@ import NavigationIcon from '@material-ui/icons/Navigation';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import HelpIcon from '@material-ui/icons/Help';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import SettingsIcon from '@material-ui/icons/Settings';
+
+import { Button, ButtonGroup, Tooltip, Fade } from 'react-bootstrap';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -23,33 +26,59 @@ const useStyles = makeStyles(theme => ({
 const MenuButtons = () => {
     const classes = useStyles();
     return (
-        <div className="topcorner">
-            <div className={classes.root}>
-                <Fab
-                    className="fab"
-                    color="primary"
-                    aria-label="help"
-                    fontSize="large"
-                >
-                    <HelpOutlineIcon className="svg_icons1" />
-                </Fab>
-                <Fab
-                    className="fab"
-                    color="secondary"
-                    aria-label="Github"
-                    onClick={() =>
-                        window.open(
-                            'https://github.com/dougwperez/react-bootstrap-album-template',
-                            '_blank'
-                        )
-                    }
-                >
-                    <a href="https://www.linkedin.com/in/doug-perez/">
-                        <GitHubIcon className="svg_icons2" />
-                    </a>
-                </Fab>
+        <>
+            <div className="topRightCorner">
+                <ButtonGroup className="mr-2" aria-label="First group">
+                    <Button className="fab-button-right">
+                        <Fab
+                            className="fab"
+                            color="primary"
+                            aria-label="help"
+                            fontSize="small"
+                        >
+                            <HelpOutlineIcon className="svg_icons1" />
+                        </Fab>
+                    </Button>{' '}
+                    {/* <Tooltip title="Delete">
+                        <div>Herro</div>
+                    </Tooltip> */}
+                    <Button className="fab-button-right">
+                        <Fab
+                            className="fab"
+                            color="primary"
+                            aria-label="Github"
+                            fontSize="small"
+                            onClick={() =>
+                                window.open(
+                                    'https://github.com/dougwperez/react-bootstrap-album-template',
+                                    '_blank'
+                                )
+                            }
+                        >
+                            {/* <a href="https://www.linkedin.com/in/doug-perez/"> */}
+                            <a>
+                                <GitHubIcon className="svg_icons2" />
+                            </a>
+                            {/* </a> */}
+                        </Fab>
+                    </Button>
+                </ButtonGroup>
             </div>
-        </div>
+            <div className="topLeftCorner">
+                <ButtonGroup className="mr-2" aria-label="First group">
+                    <Button className="fab-button-left">
+                        <Fab
+                            className="fab"
+                            color="primary"
+                            aria-label="Settings"
+                            fontSize="small"
+                        >
+                            <SettingsIcon className="svg_icons1" />
+                        </Fab>
+                    </Button>
+                </ButtonGroup>
+            </div>
+        </>
     );
 };
 

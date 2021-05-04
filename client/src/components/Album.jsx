@@ -30,7 +30,6 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
             })} */}
             {/* PAGE 3 */}
             <div id="tab6">
-                <a href="#" class="arrow left" />
                 <Container>
                     <Row className="Row-class">
                         {prints3.map((item, key) => {
@@ -98,10 +97,8 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
                         })}
                     </Row>
                 </Container>
-                <a href="#" class="arrow right" />
             </div>
             <div id="tab5">
-                <a href="#" class="arrow left" />
                 <Container>
                     <Row className="Row-class">
                         {prints3.map((item, key) => {
@@ -169,10 +166,8 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
                         })}
                     </Row>
                 </Container>
-                <a href="#" class="arrow right" />
             </div>
             <div id="tab4">
-                <a href="#" class="arrow left" />
                 <Container>
                     <Row className="Row-class">
                         {prints3.map((item, key) => {
@@ -240,10 +235,8 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
                         })}
                     </Row>
                 </Container>
-                <a href="#" class="arrow right" />
             </div>
             <div id="tab3">
-                <a href="#" class="arrow left" />
                 <Container>
                     <Row className="Row-class">
                         {prints3.map((item, key) => {
@@ -311,12 +304,10 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
                         })}
                     </Row>
                 </Container>
-                <a href="#" class="arrow right" />
             </div>
             {/* PAGE 2 */}
             {/* <div id="tab4"> */}
             <div id="tab2">
-                <a href="#" class="arrow left" />
                 <Container class="iframe-holder">
                     <Row className="Row-class">
                         {prints2.map((item, key) => {
@@ -384,11 +375,9 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
                         })}
                     </Row>
                 </Container>
-                <a href="#" class="arrow right" />
             </div>
             {/* PAGE 1 */}
             <div id="tab1">
-                <a href="#" class="arrow left" />
                 <Container>
                     <Row className="Row-class">
                         {prints1.map((item, key) => {
@@ -465,7 +454,6 @@ const Album = ({ prints, prints1, prints2, prints3 }) => {
                         })}
                     </Row>
                 </Container>
-                <a href="#" class="arrow right" />
             </div>
         </div>
     );
