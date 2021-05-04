@@ -4,11 +4,21 @@ import { Button, Container, Jumbotron } from 'reactstrap';
 import SearchBar from './SearchBar.jsx';
 import MenuButtons from './MenuButtons.jsx';
 
+import Fab from '@material-ui/core/Fab';
+import { makeStyles } from '@material-ui/core/styles';
+import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import NavigationIcon from '@material-ui/icons/Navigation';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import HelpIcon from '@material-ui/icons/Help';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+
 const Main = ({ album, prints, getPrints, prints1, prints2, prints3 }) => {
     return (
         <main role="main">
-            <MenuButtons />
             <Jumbotron className="text-center" className="frosted-glass">
+                <MenuButtons />
                 <Container>
                     <h1 className="jumbotron-heading">BluePrints JS</h1>
                     <p className="lead text-muted" className="subtitle">

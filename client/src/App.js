@@ -68,11 +68,11 @@ export default class Example extends React.Component {
             // .then(response => {
             .then(
                 axios.spread((response1, response2, response3) => {
-                    // this.setState({
-                    //     prints: response1.data.items.concat(
-                    //         response2.data.items
-                    //     )
-                    // });
+                    this.setState({
+                        prints: response1.data.items.concat(
+                            response2.data.items
+                        )
+                    });
                     this.setState({
                         prints1: response1.data.items,
                         prints2: response2.data.items,
@@ -162,7 +162,7 @@ export default class Example extends React.Component {
                     getPrints={this.getPrints}
                 />
                 <Footer />
-                <button onClick={() => this.nextPrints()}>NEXT</button>
+                {/* <button onClick={() => this.nextPrints()}>NEXT</button> */}
             </div>
             // this.setState({count: this.state.count+1})
         );

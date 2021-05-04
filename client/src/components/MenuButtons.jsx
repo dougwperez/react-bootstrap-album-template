@@ -33,8 +33,20 @@ const MenuButtons = () => {
                 >
                     <HelpOutlineIcon className="svg_icons1" />
                 </Fab>
-                <Fab className="fab" color="secondary" aria-label="Github">
-                    <GitHubIcon className="svg_icons2" />
+                <Fab
+                    className="fab"
+                    color="secondary"
+                    aria-label="Github"
+                    onClick={() =>
+                        window.open(
+                            'https://github.com/dougwperez/react-bootstrap-album-template',
+                            '_blank'
+                        )
+                    }
+                >
+                    <a href="https://www.linkedin.com/in/doug-perez/">
+                        <GitHubIcon className="svg_icons2" />
+                    </a>
                 </Fab>
             </div>
         </div>

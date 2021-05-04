@@ -15,7 +15,7 @@
     position: relative;
     top: -75px;
     height: 200px;
-    width: 800px;
+    width: 870px;
     margin: 0 auto;
     background: brown;
     text-align: center;
@@ -38,7 +38,7 @@
 
 .jumbotron {
     transform-style: preserve-3d;
-    transform: rotate3d(1, 0, 0, 50deg);
+    transform: rotate3d(1, 0, 0, 43.5deg);
     margin-top: 15px;
 }
 .jumbotron {
@@ -150,6 +150,60 @@ footer p {
     display: flex; */
 }
 
+//CSS GRID
+html,
+body,
+.grid-container {
+    height: 100%;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        'Button Title Title Buttons'
+        'TagLine TagLine TagLine TagLine'
+        'SearchBar SearchBar SearchBar SearchBar';
+}
+
+.Title {
+    grid-area: Title;
+}
+
+.Button {
+    grid-area: Button;
+}
+
+.Buttons {
+    grid-area: Buttons;
+}
+
+.SearchBar {
+    grid-area: SearchBar;
+}
+
+.TagLine {
+    grid-area: TagLine;
+}
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+    border: 1px solid red;
+    position: relative;
+}
+
+.grid-container *:after {
+    content: attr(class);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+//End CSS Grid
+
 p {
     color: black;
 }
@@ -166,19 +220,32 @@ p {
     &::after {
         content: '';
         position: absolute;
-        width: 4vw;
-        height: 25vh;
+        width: 3.2vw;
+        height: 14vh;
         background: $col;
         border-radius: 0 20px 20px 0;
         top: $tabPos;
         right: -2.5vw;
+        border-right: 2px solid white;
+        // border-right: 2px solid white;
+
+        // top: 0.4vh;
     }
 }
 
-$col1: #e6b098;
-$col2: #cc4452;
-$col3: #723147;
-$col4: #31152b;
+$col1: #15c2f4;
+$col2: #862d52;
+$col3: #3b516f;
+$col4: #88512d;
+$col5: #887f2d;
+$col6: #742d88;
+
+// $col1: #ecce8e;
+// $col2: #f2c67b;
+// $col3: #dbb36d;
+// $col4: #f4e095;
+// $col5: #fff2bf;
+// $col6: #dbb36d;
 
 html,
 body {
@@ -194,39 +261,54 @@ body {
     border-radius: 20px;
 
     transform: translateX(1vw);
+
     position: absolute;
     box-shadow: 6px 0px 6px rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease;
     &:hover ~ div {
-        transform: translateX(-80vw);
+        transform: translateX(-92vw);
     }
+    border: 2px solid white;
 }
 
-// #tab0 {
-//     @extend .tab;
-//     width: 93.5vw;
-//     background: black;
-// }
+#tab0 {
+    @extend .tab;
+    width: 93.5vw;
+    background: black;
+}
+#tab6 {
+    @extend .tab;
+    width: 93.5vw;
+    background: $col6;
+    @include tab($col6, 64%);
+}
+#tab5 {
+    @extend .tab;
+    width: 93.5vw;
+    background: $col5;
+    @include tab($col5, 51%);
+}
 
-// #tab1 {
-//     @extend .tab;
-//     width: 93.5vw;
-//     background: $col4;
-//     @include tab($col4, 75%);
-// }
+#tab4 {
+    @extend .tab;
+    width: 93.5vw;
+    background: $col4;
+    @include tab($col4, 38%);
+}
 
 #tab3 {
     @extend .tab;
     width: 93.5vw;
     background: $col3;
-    @include tab($col3, 50%);
+    @include tab($col3, 25%);
 }
 
 #tab2 {
     @extend .tab;
     width: 93.5vw;
+
     background: $col2;
-    @include tab($col2, 25%);
+    @include tab($col2, 13%);
 }
 
 #tab1 {
@@ -234,7 +316,8 @@ body {
     width: 93.5vw;
     background: $col1;
     @include tab($col1, 0);
-    margin-right: 15px;
+    margin-right: 5px;
+    // border: 2px solid white;
 }
 
 .iframe-container {
@@ -244,12 +327,32 @@ body {
     position: relative;
 }
 
+.iframe-container:hover {
+    height: 560%;
+    left: 0;
+    position: absolute;
+    width: 160%;
+    top: 0;
+    padding-bottom: 1px;
+}
+
 .iframe-container iframe {
     height: 100%;
     left: 0;
     position: absolute;
     width: 500px;
     top: 0;
+    padding-bottom: 1px;
+}
+
+.iframe-container iframe:hover {
+    height: 150%;
+    left: 0;
+    position: absolute;
+    width: 150%;
+    top: 0;
+    padding-bottom: 1px;
+    z-index: 11;
 }
 
 .Row-class {
@@ -348,7 +451,9 @@ html {
 }
 
 .card-body {
-    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    // background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    background-color: #2b5285;
+    border: 2px outset white;
 }
 
 .card-text {
@@ -361,6 +466,7 @@ html {
 }
 .svg_icons2 {
     transform: scale(2);
+    color: white;
 }
 
 .fab:hover {
