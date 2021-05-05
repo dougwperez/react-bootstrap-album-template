@@ -22,18 +22,19 @@ const Main = ({ album, prints, getPrints, prints1, prints2, prints3 }) => {
             </div>
             <div className="next btn">
                 <Button variant="primary" size="sm">
-                    Next <NavigateNextIcon className="svg_icons1" />
+                    Next &nbsp; <NavigateNextIcon className="svg_icons1" />
                 </Button>{' '}
             </div>
 
             <Jumbotron className="text-center" className="frosted-glass">
                 <MenuButtons />
                 <Container>
-                    <h1 className="jumbotron-heading">BluePrints JS</h1>
+                    <h1 className="jumbotron-heading">
+                        BluePrints <span>JS</span>
+                    </h1>
                     <p className="lead text-muted" className="subtitle">
-                        <strong>
-                            The search engine that combs the web for live
-                            working code.
+                        <strong className="subs">
+                            The search engine for HTML, CSS && JS code snippets.
                         </strong>
                     </p>
 

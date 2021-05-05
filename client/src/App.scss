@@ -13,7 +13,7 @@
     backdrop-filter: blur(20px);
     transition: 0.5s ease;
     position: relative;
-    top: -75px;
+    top: -83px;
     height: 200px;
     width: 1000px;
     margin: 0 auto;
@@ -50,9 +50,22 @@
 
 .jumbotron-heading {
     font-weight: 800;
-    color: #021b79;
+    background: -webkit-linear-gradient(left, #4051b5, #0575e6);
+    background: -o-linear-gradient(right, #021b79, #0575e6);
+    background: -moz-linear-gradient(right, #021b79, #0575e6);
+    background: linear-gradient(to right, #021b79, #0575e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-top: -50px;
     margin-bottom: 30px;
+
+    //  #021b79,
+    //     #0575e6
+}
+
+//MAKE JS SPAN YELLOW
+.jumbotron-heading .span {
+    color: yellow;
 }
 
 .jumbotron .container {
@@ -118,20 +131,24 @@ footer p {
 
 .searchBar {
     // margin-top: 0px;
-
+    outline: none;
     width: 500px;
     height: 100px;
     font-size: 27px;
     position: relative;
     display: flex;
-    color: #021b79;
+    // color: #021b79;
+    color: black;
     font-weight: 500;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .searchBtn {
     height: 100px;
     font-size: 27px;
-
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     color: white;
     font-weight: 700;
     background: #0575e6; /* fallback for old browsers */
@@ -228,25 +245,40 @@ p {
     &::after {
         content: '';
         position: absolute;
-        width: 3.2vw;
+        width: 2.59vw;
         height: 14vh;
         background: $col;
         border-radius: 0 20px 20px 0;
         top: $tabPos;
         right: -2.5vw;
-        border-right: 2px solid white;
+        border-right: 3px solid white;
+        border-bottom: 3px solid white;
+        border-top: 3px solid white;
         // border-right: 2px solid white;
 
         // top: 0.4vh;
     }
 }
+$col1: #ffea61;
+$col2: #fff192;
+$col3: #ffdd3c;
+$col4: #ffd400;
+$col5: #ffffb7;
+$col6: #ffd400;
 
-$col1: #872e81;
-$col2: #2e5487;
-$col3: #2e8735;
-$col4: #872e81;
-$col5: #2e5487;
-$col6: #2e8735;
+// $col1: #ffd400;
+// $col2: #ffdd3c;
+// $col3: #ffea61;
+// $col4: #fff192;
+// $col5: #ffffb7;
+// $col6: #fff192;
+
+// $col1: #872e81;
+// $col2: #2e5487;
+// $col3: #2e8735;
+// $col4: #872e81;
+// $col5: #2e5487;
+// $col6: #2e8735;
 
 // $col1: #15c2f4;
 // $col2: #862d52;
@@ -280,7 +312,8 @@ body {
     margin-top: -170px;
     margin-left: 10px;
     margin-right: -50px;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 8px;
 
     transform: translateX(1vw);
 
@@ -290,7 +323,7 @@ body {
     &:hover ~ div {
         transform: translateX(-92vw);
     }
-    border: 2px solid white;
+    border: 3px solid white;
 }
 
 #tab0 {
@@ -330,14 +363,14 @@ body {
     width: 93.5vw;
 
     background: $col2;
-    @include tab($col2, 13%);
+    @include tab($col2, 12%);
 }
 
 #tab1 {
     @extend .tab;
     width: 93.5vw;
     background: $col1;
-    @include tab($col1, 0);
+    @include tab($col1, -0.3%);
     margin-right: 5px;
     // border: 2px solid white;
 }
@@ -448,6 +481,7 @@ html {
     // }
 }
 
+//MAKE NEXT AND PREVIOUS BUTTONS YELLOW
 .next .btn {
     right: 0;
     margin-right: 120px;
@@ -455,7 +489,11 @@ html {
     position: absolute;
     top: 0;
     // height: 100px;
-    font-size: 27px;
+    font-size: 23px;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-right: 17px;
+    padding-bottom: 10px;
 
     color: white;
     font-weight: 700;
@@ -485,12 +523,16 @@ html {
 
 .prev .btn {
     left: 0;
+
     margin-left: 120px;
     margin-top: 100px;
     position: absolute;
     top: 0;
     // height: 100px;
-    font-size: 27px;
+    font-size: 23px;
+    border-radius: 10px;
+    padding-right: 15px;
+    padding-bottom: 8px;
 
     color: white;
     font-weight: 700;
@@ -667,3 +709,9 @@ fab-button-right:hover > .fab {
 // .btn .btn-secondary .btn-lg {
 //     background-color: #4051b5;
 // }
+
+.subs {
+    color: black;
+    font-size: 21px;
+    font-weight: 700;
+}
