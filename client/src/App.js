@@ -59,10 +59,10 @@ export default class Example extends React.Component {
                 ),
                 axios.get(
                     `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${(start += 7)}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
-                ),
-                axios.get(
-                    `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${(start += 14)}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
                 )
+                // axios.get(
+                //     `${proxyurl}https://customsearch.googleapis.com/customsearch/v1/siterestrict?num=9&cx=dc1c0a26376a66714&q=${query}&start=${(start += 14)}&num=6&key=AIzaSyCfI6Dgf4vFzx60JupuHtviiS_tGIjbFj0`
+                // )
             ])
             //  res.header("Access-Control-Allow-Headers", "x-requested-with, x-requested-by");
             // .then(response => {
@@ -75,8 +75,8 @@ export default class Example extends React.Component {
                     });
                     this.setState({
                         prints1: response1.data.items,
-                        prints2: response2.data.items,
-                        prints3: response3.data.items
+                        prints2: response2.data.items
+                        // prints3: response3.data.items
                     });
                     // this.setState({ prints: response2.data.items });
 

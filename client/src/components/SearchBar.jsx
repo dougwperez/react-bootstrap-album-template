@@ -15,6 +15,7 @@ class SearchBar extends React.Component {
     }
 
     handleSubmit(event) {
+        console.log('Testing click');
         event.preventDefault();
         this.props.getPrints(this.state.value);
     }
